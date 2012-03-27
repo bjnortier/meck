@@ -719,11 +719,12 @@ expect_type(M, F, A) -> expect_type(erlang:is_builtin(M, F, A)).
 expect_type(true)  -> builtin;
 expect_type(false) -> normal.
 
-cleanup(Mod) ->
-    code:purge(Mod),
-    code:delete(Mod),
-    code:purge(original_name(Mod)),
-    code:delete(original_name(Mod)).
+cleanup(_Mod) ->
+    %code:purge(Mod),
+    %code:delete(Mod),
+    %code:purge(original_name(Mod)),
+    %code:delete(original_name(Mod)).
+    ok.
 
 %% --- History utilities -------------------------------------------------------
 
